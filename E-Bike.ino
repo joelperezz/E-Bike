@@ -30,11 +30,21 @@ void setup() {
     delay(750);
     count++;
   }
+
+  // Static Values on the LCD Screen
   lcd.home();
-  lcd.print("MODE:        MPH");
+  lcd.print("MODE:");
   lcd.setCursor(0,1);
-  lcd.print("BATTERY:    %");
+  lcd.print("BATT:    %   MPH");
 }
 
 void loop() {
+  
+  // Print Dynamic Values on LCD Screen
+  lcd.setCursor(6, 1);                   
+  lcd.print("100");                         // Print Battery Status
+  lcd.setCursor(11, 1);
+  lcd.print("20");                          // Print Speed
+  lcd.setCursor(6, 0);
+  lcd.print("DRIVE");                       // Print Mode
 }
